@@ -1,0 +1,17 @@
+<h1><%=@blogger.name%></h1>
+<hr>
+
+<% @blogger.posts.each do |post| %>
+    <li>
+        <%= post.title %>
+        <%= post.likes %>
+    </li>
+<% end %>
+<h1>Most popular post: </h1>
+<% begin %>
+<%= link_to @blogger.most_likes.title, @blogger.most_likes %>
+<% rescue %>
+<p>
+    Blogger has no post
+</p>
+<% end %>
