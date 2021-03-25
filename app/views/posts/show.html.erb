@@ -5,6 +5,10 @@
     <%= @post.content %>
 </p>
 
+<p>
+    <%= @post.likes %>
+</p>
+
 <li>
     <%= link_to @post.blogger.name, @post.blogger %>
 </li>
@@ -12,5 +16,5 @@
     <%= link_to @post.destination.name, @post.destination %>
 </li>
 
-<%= button_to "Like", li  %>
+<%= button_to "Like", action: "like" %>
 
